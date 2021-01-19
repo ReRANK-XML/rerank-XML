@@ -1,16 +1,35 @@
-### Hi there 👋
+# README for NIPS-2020 code
 
-<!--
-**ReRANK-XML/rerank-XML** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+## Depedencies via Conda Environment
+    > conda env create -n xml --file environment.yml
+    > source activate xml
+**Notice**: the following examples are executed under the > (xml) conda virtual environment
 
-Here are some ideas to get you started:
+## Install pyxclib
+Tools for multi-label classification problems.
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+    > git clone https://github.com/kunaldahiya/xclib.git
+    > cd xclib
+    > python setup.py install --user
+
+## Compile Cython Code
+We implement some functional interface in Python for the sake of efficiency.
+
+    > python setup.py build_ext --inplace
+
+
+## Run the Sample
+```
+#### train models on eurlex using entire dataset
+python main.py -d eurlex -ft 1
+```
+
+```
+#### train models on eurlex by setting label splitting threshold \tau = 0.1
+python main.py -d eurlex -thr 0.1
+```
+
+```
+#### train models on eurlex by setting label splitting threshold \tau = 0.1 and data augmentation parameter n_aug = 3
+python main.py -d eurlex -thr 0.1 -aug 3
+```
