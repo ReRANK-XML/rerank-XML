@@ -1,4 +1,4 @@
-# README for NIPS-2020 code
+# README for KDD-2021 code
 
 ## Depedencies via Conda Environment
     > conda env create -n xml --file environment.yml
